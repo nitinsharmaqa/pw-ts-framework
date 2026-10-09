@@ -1,3 +1,12 @@
+# Playwright TypeScript framework
+
+Login tests for the public Sauce Demo site. Page objects, GitHub Actions, Jenkinsfile.
+
+## Run
+
+npm ci
+npx playwright install
+npx playwright test
 
 ## CI
 
