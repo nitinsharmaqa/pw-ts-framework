@@ -1,15 +1,15 @@
 # Playwright TypeScript framework
 
-Login tests for the public Sauce Demo site. Page objects, GitHub Actions, Jenkinsfile.
+UI and API checks for a public demo shop, plus a small API suite. TypeScript, page objects, GitHub Actions, Jenkinsfile.
+
+## What is covered
+
+- Login, locked-out user, add to cart, cart contents
+- API GET and POST against JSONPlaceholder
 
 ## Run
 
+```bash
 npm ci
 npx playwright install
 npx playwright test
-
-## CI
-
-GitHub Actions runs on every push to main.
-
-Jenkins: use the Jenkinsfile in a pipeline job. The agent needs Node 22 and permission to install Playwright browsers.
