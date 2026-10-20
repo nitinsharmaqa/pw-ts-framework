@@ -22,3 +22,17 @@ test('create post returns 201 and the title', async ({ request }) => {
   const body = await response.json();
   expect(body.title).toBe('qa return');
 });
+
+//20/10/2026
+test('post without a title is still accepted by the fake API', async ({ request }) => {
+  const response = await request.post('https://jsonplaceholder.typicode.com/posts', {
+    data: {
+      body: 'missing title',
+      userId: 1,
+    },
+  });
+
+  expect(response.status()).toBe(201);
+  const body = await response.json();
+  expect(body.title).toBeUndefined();
+});
