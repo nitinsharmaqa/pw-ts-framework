@@ -1,0 +1,14 @@
+import { test, expect } from '../fixtures/auth';
+import { InventoryPage } from '../pages/inventory.page';
+import { CheckoutPage } from '../pages/checkout.page';
+
+test('overview shows the backpack', async ({ page }) => {
+  const inventory = new InventoryPage(page);
+  const checkout = new CheckoutPage(page);
+
+  await inventory.addBackpackToCart();
+  await inventory.openCart();
+  await checkout.start('Nitin', 'Sharma', '400001');
+
+  await expect(page.getByText('Sauce Labs Backpack')).toBeVisible();
+});
